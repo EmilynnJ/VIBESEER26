@@ -1,0 +1,231 @@
++ exec gosu vibecode scripts/studio
+Installing dependencies and generating Prisma client...
+[0.89ms] ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.17.1 -> 7.4.0                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 101ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+
++ @types/bun@1.2.23
++ prisma@6.17.1
++ @better-auth/expo@1.3.24
++ @hono/node-server@1.12.0
++ @hono/zod-validator@0.7.3
++ @prisma/adapter-better-sqlite3@6.17.1
++ @prisma/client@6.17.1
++ ably@2.17.0
++ agora-access-token@2.0.4
++ better-auth@1.3.24
++ hono@4.6.0
++ stripe@20.3.0
++ zod@4.1.11
++ typescript@5.8.3
+
+728 packages installed [8.66s]
+scripts/studio: line 6: ependencies: command not found
++ exec gosu vibecode scripts/studio
+Starting in development mode...
+Installing dependencies...
+[0.06ms] ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 146ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+
+
+Checked 852 installs across 793 packages (no changes) [1410.00ms]
+Starting Cloud Studio...
+Cloud Studio starting on http://0.0.0.0:3001
+Cloud Studio is running at http://0.0.0.0:3001
+Prisma Client connected
++ exec gosu vibecode scripts/studio
+Starting in development mode...
+Installing dependencies...
+[0.06ms] ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 144ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+
+Checked 852 installs across 793 packages (no changes) [1.96s]
+Starting Cloud Studio...
+Cloud Studio starting on http://0.0.0.0:3001
+Cloud Studio is running at http://0.0.0.0:3001
+Prisma Client connected
++ exec gosu vibecode scripts/studio
+Starting in development mode...
+Installing dependencies...
+[0.06ms] ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 146ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+
+Checked 852 installs across 793 packages (no changes) [2.16s]
+Starting Cloud Studio...
+Cloud Studio starting on http://0.0.0.0:3001
+Cloud Studio is running at http://0.0.0.0:3001
+Prisma Client connected
++ exec gosu vibecode scripts/studio
+Starting in development mode...
+Installing dependencies...
+[0.07ms] ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.17.1 -> 7.4.1                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 85ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+
++ @types/bun@1.2.23
++ prisma@6.17.1
++ @better-auth/expo@1.3.24
++ @hono/node-server@1.12.0
++ @hono/zod-validator@0.7.3
++ @prisma/adapter-better-sqlite3@6.17.1
++ @prisma/client@6.17.1
++ @vibecodeapp/backend-sdk@1.0.1
++ @vibecodeapp/cloud-studio@0.2.4
++ @vibecodeapp/proxy@2.0.3
++ ably@2.17.0
++ agora-access-token@2.0.4
++ better-auth@1.3.24
++ hono@4.6.0
++ stripe@20.3.0
++ zod@4.1.11
++ typescript@5.8.3
+
+782 packages installed [10.03s]
+Starting Cloud Studio...
+Cloud Studio starting on http://0.0.0.0:3001
+Cloud Studio is running at http://0.0.0.0:3001
+Prisma Client connected
++ exec gosu vibecode scripts/studio
+Starting in development mode...
+Installing dependencies...
+[0.06ms] ".env.production", ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 155ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+
+Checked 852 installs across 793 packages (no changes) [2.29s]
+Starting Cloud Studio...
+Cloud Studio starting on http://0.0.0.0:3001
+Cloud Studio is running at http://0.0.0.0:3001
+Prisma Client connected
++ exec gosu vibecode scripts/studio
+Starting in development mode...
+Installing dependencies...
+[0.07ms] ".env.production", ".env"
+bun install v1.2.19 (aad3abea)
+
+$ prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.17.1 -> 7.4.1                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+
+✔ Generated Prisma Client (v6.17.1) to ./generated/prisma in 165ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+
++ @types/bun@1.2.23
++ prisma@6.17.1
++ @better-auth/expo@1.3.24
++ @hono/node-server@1.12.0
++ @hono/zod-validator@0.7.3
++ @prisma/adapter-better-sqlite3@6.17.1
++ @prisma/client@6.17.1
++ @vibecodeapp/backend-sdk@1.0.1
++ @vibecodeapp/cloud-studio@0.2.4
++ @vibecodeapp/proxy@2.0.3
++ ably@2.17.0
++ agora-access-token@2.0.4
++ better-auth@1.3.24
++ hono@4.6.0
++ stripe@20.3.0
++ zod@4.1.11
++ typescript@5.8.3
+
+782 packages installed [9.31s]
+Starting Cloud Studio...
+Cloud Studio starting on http://0.0.0.0:3001
+Cloud Studio is running at http://0.0.0.0:3001
+Prisma Client connected

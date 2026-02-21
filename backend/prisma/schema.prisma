@@ -1,0 +1,174 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CLIENT
+  READER
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  name          String?
+  emailVerified Boolean   @default(false)
+  image         String?
+  role          UserRole  @default(CLIENT)
+  balance       Float     @default(0) // User account balance for pay-per-minute readings
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now()) @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+
+  Profile Profile?
+  ReaderProfile ReaderProfile?
+  clientSessions ReadingSession[] @relation("ClientSessions")
+  readerSessions ReadingSession[] @relation("ReaderSessions")
+  clientTransactions Transaction[] @relation("ClientTransactions")
+  readerTransactions Transaction[] @relation("ReaderTransactions")
+  reviews Review[]
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
+
+  @@map("verification")
+}
+
+model Profile {
+  id     Int    @id @default(autoincrement())
+  handle String @unique
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+model ReaderProfile {
+  id               Int      @id @default(autoincrement())
+  userId           String   @unique
+  user             User     @relation(fields: [userId], references: [id])
+  displayName      String
+  bio              String?
+  specialties      String?  // JSON array of specialties
+  yearsExperience  Int?
+  profileImage     String?
+  isOnline         Boolean  @default(false)
+  isAvailable      Boolean  @default(false)
+  chatRatePerMin   Float    @default(0)
+  phoneRatePerMin  Float    @default(0)
+  videoRatePerMin  Float    @default(0)
+  rating           Float?
+  totalReviews     Int      @default(0)
+  totalSessions    Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+enum SessionType {
+  CHAT
+  PHONE
+  VIDEO
+}
+
+enum SessionStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+model ReadingSession {
+  id              Int           @id @default(autoincrement())
+  clientId        String
+  client          User          @relation("ClientSessions", fields: [clientId], references: [id])
+  readerId        String
+  reader          User          @relation("ReaderSessions", fields: [readerId], references: [id])
+  sessionType     SessionType
+  status          SessionStatus @default(PENDING)
+  startTime       DateTime?
+  endTime         DateTime?
+  totalMinutes    Float         @default(0)
+  ratePerMinute   Float
+  totalAmount     Float         @default(0)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+enum TransactionType {
+  SESSION_PAYMENT
+  BALANCE_ADD
+  GIFT
+  PAYOUT
+}
+
+model Transaction {
+  id          Int             @id @default(autoincrement())
+  userId      String
+  user        User            @relation("ClientTransactions", fields: [userId], references: [id])
+  readerId    String?
+  reader      User?           @relation("ReaderTransactions", fields: [readerId], references: [id])
+  type        TransactionType
+  amount      Float
+  description String?
+  createdAt   DateTime        @default(now())
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  readerId  String
+  rating    Int      // 1-5 stars
+  comment   String?
+  createdAt DateTime @default(now())
+}
